@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="home.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Benvenuto</title>
+    </head>
+    <body>
+      <div class="container mt-5">
+        <div class="row">          
+          <div class="col">  
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item active" aria-current="page">Admin GUI</li>
+                </ol>
+              </nav>   
+            <input type="TEXT" id="tokenUser" size="40" placeholder="Token User"><br>
+            <button type="button" class="btn btn-secondary active btn-sm" onclick=getToken()>Generete Token </button><br><br>
+            <button type="button" class="btn btn-secondary active btn-sm" onclick=getPublic()>Get Public</button><br><br>
+            <button type="button" class="btn btn-secondary active btn-sm" onclick=getPrivate()>Get Private</button><br><br>
+            <button type="button" class="btn btn-secondary active btn-sm" onclick=getHealth(true)>Get Health</button><br><br>
+
+            <input type="TEXT" id="pageUser" size="40" placeholder="Insert page number"><br>
+            <button type="button" class="btn btn-secondary active btn-sm" onclick=getEntity()>Get Entity</button><br><br>
+
+            <input type="TEXT" id="pageContract" size="40" placeholder="Insert page number"><br>
+            <button type="button" class="btn btn-secondary active btn-sm" onclick=getContract()>Get Contract</button><br><br>
+
+            <input type="TEXT" id="loginId" size="40" placeholder="loginId"><br>
+            <input type="TEXT" id="tenant" size="40" placeholder="tenant"><br>
+            <input type="TEXT" id="name" size="40" placeholder="name"><br>
+            <button type="button" class="btn btn-secondary active btn-sm" onclick="postEntity()">Post Entity</button><br><br>
+
+            <input type="TEXT" id="partALoginId" size="40" placeholder="partALoginId"><br>
+            <input type="TEXT" id="partBLoginId" size="40" placeholder="partBLoginId"><br>
+            <input type="TEXT" id="amount" size="40" placeholder="amount"><br>
+            <input type="TEXT" id="notes" size="40" placeholder="notes"><br>
+            <button type="button" class="btn btn-secondary active btn-sm" onclick="postContract()">Post Contract</button><br><br>
+
+            <input type="TEXT" id="id" size="40" placeholder="idUser"><br>
+            <button type="button" class="btn btn-secondary active btn-sm" onclick="deleteUser()">Delete User</button><br><br>
+
+            <input type="TEXT" id="idDocument" size="40" placeholder="idDocument"><br>
+            <button type="button" class="btn btn-secondary active btn-sm" onclick="deleteDocument()">Delete Document</button><br><br>
+          </div>
+
+          <div class="col">
+              <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">System Status</li>
+                  </ol>
+                </nav>  
+            <p><span>Postgres <span id="postgres-status" ></span></span></p>
+            <p><span>MongoDB <span id="mongodb-status" ></span></span></p>
+            <p><span>Ping <span id="ping-status" ></span></span></p>
+            <p><span>Disk Space <span id="diskspace-status"></span></span></p>
+              
+            <nav aria-label="breadcrumb" class="mt-5">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item active" aria-current="page">API Response</li>
+                </ol>
+              </nav>  
+            <div class="mt-5" id="resp"></div>
+          </div>
+        </div>
+      </div>
+    </body>
+</html>
